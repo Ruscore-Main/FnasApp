@@ -1,0 +1,39 @@
+@use "@/scss/variables" as *;
+
+.wrapper {
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+}
+
+.input {
+  display: none;
+}
+
+.box {
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-image: $gradient 1;
+  transition: background $duration;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checked {
+  background: $gradient;
+}
+
+.label {
+  margin-left: 10px;
+  font-size: $caption_size;
+  color: #87878C !important;
+  text-transform: uppercase;
+}

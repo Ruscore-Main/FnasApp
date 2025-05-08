@@ -1,0 +1,21 @@
+@use "./variables.scss" as *;
+@import "./libs/normalize.scss";
+
+body {
+    background-color: $black;
+    height: 100%;
+}
+
+a { 
+    font-weight: $text_medium;
+    transition: all $duration ease;
+
+    &:hover {
+        color: #A9A9A9;
+        transition: all $duration ease;
+    }
+}
+
+.muted {
+    opacity: 0.5;
+}

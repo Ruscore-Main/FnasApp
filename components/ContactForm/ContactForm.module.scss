@@ -1,0 +1,45 @@
+@use '@/scss/variables.scss' as *;
+
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    button {
+        width: 126px;
+        margin-top: 20px;
+    }
+}
+
+.inputWrapper {
+    position: relative;
+
+    input {
+        width: 100%;
+    }
+}
+
+.errorText {
+    color: red !important;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+    position: absolute;
+    bottom: -14px;
+}
+
+.phoneInput {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid $black;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.checkboxWrapper {
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}

@@ -1,0 +1,57 @@
+@use "./../../scss/variables.scss" as *;
+
+.button {
+  position: relative;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: $text_size;
+  font-weight: $text_regular;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  overflow: hidden;
+
+  .text {
+    position: relative;
+    z-index: 2;
+
+    &.white {
+      color: $white;
+    }
+
+    &.black {
+      color: $black;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 1px;
+    background: $gradient;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    background: $gradient;
+    opacity: 0;
+    transition: opacity $duration ease;
+    z-index: 1;
+  }
+
+  &:hover::after,
+  &:active::after {
+    opacity: 1;
+  }
+}

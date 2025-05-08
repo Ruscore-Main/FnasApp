@@ -1,0 +1,266 @@
+@use "@/scss/variables" as *;
+
+.header {
+  padding: 20px 0 15px 0;
+  z-index: 4;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  button {
+    z-index: 7;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgba($white, .3);
+    background-color: $black;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  display: none;
+  pointer-events: none;
+}
+
+.overlayActive {
+  display: block;
+}
+
+.headerInner {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media(max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @media(max-width: 992px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media(max-width: 768px) {
+    padding: 0 10px;
+  }
+}
+
+.logo {
+  z-index: 7;
+
+  @media(max-width: 992px) {
+    width: 44px;
+    height: 53px;
+    margin-bottom: 10px;
+  }
+}
+
+.nav {
+  display: flex;
+  z-index: 6;
+  margin: 0;
+
+  @media(max-width: 992px) {
+    display: block;
+    padding-bottom: 20px;
+  }
+}
+
+.navItem {
+  position: relative;
+  margin-right: 30px;
+
+  &:hover .arrow {
+    transform: rotate(90deg);
+  }
+
+  @media(max-width: 992px) {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.navPoint {
+  cursor: default;
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-right: 4px;
+    color: $white;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  z-index: 4;
+
+  @media(max-width: 1200px) {
+    grid-column-end: 5;
+  }
+
+  @media(max-width: 992px) {
+    transform: translate(0, -100%);
+    transition: transform .2s linear;
+    flex-direction: column;
+    align-items: start;
+    padding: 119px 0px 20px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    background-color: $black;
+    overflow: auto;
+  }
+}
+
+.menuActive {
+  transform: translate(0, 0);
+}
+
+.links {
+  z-index: 5;
+  display: none;
+  position: fixed;
+  padding-top: 60px;
+  padding-bottom: 45px;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  background-color: $black;
+  border-bottom: 1px solid rgba($white, .3);
+
+  @media(max-width: 992px) {
+    position: relative;
+    width: auto;
+    padding: 10px 0 0 20px;
+    top: 0;
+    border-bottom: none;
+  }
+}
+
+.linksActive {
+  display: block;
+}
+
+.linksWrapper {
+  z-index: 5;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 61px;
+  justify-content: center;
+  margin: 0 auto;
+
+  a {
+    padding-bottom: 15px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  @media(max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.burger {
+  cursor: pointer;
+  position: relative;
+  width: 36px;
+  height: 36px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 4px);
+    transform: translateY(-50%);
+    background: $white;
+    width: 36px;
+    height: 3px;
+    transition: transform .2s linear, top .2s linear;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(50% + 4px);
+    transform: translateY(-50%);
+    background: $white;
+    width: 36px;
+    height: 3px;
+    transition: transform .2s linear, top .2s linear;
+  }
+}
+
+.burgerActive {
+  &::after {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+}
+
+.burgerMain {
+  display: none;
+
+  @media(max-width: 992px) {
+    display: block;
+  }
+}
+
+
+.link {
+  cursor: pointer;
+  transition: color $duration linear;
+
+  &:hover {
+    color: $white !important;
+  }
+}
+
+
+.wrapper {
+  position: relative;
+  display: grid;
+  margin: 0 auto;
+  max-width: 1440px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 32px;
+}
+
+.muted {
+  opacity: 0.5;
+  transition: opacity $duration ease;
+}

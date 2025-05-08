@@ -1,0 +1,27 @@
+.embla {
+  overflow: hidden;
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    margin-top: 30px;
+  }
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla__prev {
+  margin-right: 20px;
+}

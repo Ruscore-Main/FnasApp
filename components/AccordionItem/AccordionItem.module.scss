@@ -1,0 +1,50 @@
+.item {
+  border-bottom: 1px solid #57575C;
+
+  img {
+    transition: transform 0.2s;
+
+    &.open {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
+
+.header {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 44px;
+  font-weight: 700;
+  padding: 20px 0px;
+  cursor: pointer;
+  transition: background 0.2s;
+  outline: none;
+  text-align: left;
+}
+
+.title {
+  flex: 1;
+  text-align: left;
+}
+
+.icon {
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contentInner {
+  padding-bottom: 30px;
+}

@@ -1,0 +1,75 @@
+@use './../variables.scss' as *;
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: var(--font-inter);
+  }
+  
+  html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    height: 100%;
+  }
+  
+  body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: $white;
+  }
+  
+  a,
+  span,
+  p,
+  b,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: $text_semibold;
+  }
+  
+  h1 {
+    font-size: $h1_size;
+  }
+  
+  h2 {
+    font-size: $h2_size;
+  }
+
+  h3 {
+    font-size: $h3_size;
+  }
+
+  h4, h5, h6 {
+    font-size: $h4_size;
+  }
+
+  p, span, b, input {
+    font-size: $text_size;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  @mixin noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+  }

@@ -1,0 +1,42 @@
+@use '@/scss/variables.scss' as *;
+
+.footer {
+    background: $gradient;
+    padding: 60px 0px;
+
+    @media (max-width: 768px) {
+        .footer__logo {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-column: 1 / -1;
+            grid-row: 2;
+            text-transform: uppercase;
+        }
+    }
+
+
+    &__logo {
+        grid-column: 1;
+        grid-row: 1
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 1 / span 6;
+        grid-row: 1;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+}
