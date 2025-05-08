@@ -200,7 +200,7 @@ export const Header: React.FC = () => {
           </div>
         </div>
         {/* Отображаем оверлей только после монтирования компонента */}
-        {isMounted && (
+        {(isMounted && !mobileMenuOpen) && (
           <div className={cn(styles.overlay, { [styles.overlayActive]: showOverlay })} />
         )}
       </header>
